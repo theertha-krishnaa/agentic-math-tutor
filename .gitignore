@@ -1,0 +1,13 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+venv/
+env/
+.venv/
+qdrant_storage/
+qdrant_storage_v2/
+credentials/
+*.json
+.DS_Store
+Thumbs.db

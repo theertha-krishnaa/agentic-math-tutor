@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Math Tutor Agent</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,300;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap');
+
+Open frontend/index.html and find the :root block at the top of the CSS. Replace just the two :root blocks (light and dark) with these:
+css:
+
+:root {
+  --bg:        #f0f3fb;
+  --surface:   #ffffff;
+  --border:    rgba(20,99,243,0.1);
+  --border-md: rgba(20,99,243,0.18);
+  --text:      #1d2023;
+  --muted:     #5a6270;
+  --faint:     #ccd0d8;
+  --ink:       #1d2023;
+  --green:     #1463f3;
+  --green-bg:  rgba(132,164,252,0.12);
+  --green-bd:  rgba(20,99,243,0.25);
+  --amber:     #1d2023;
+  --amber-bg:  rgba(204,208,216,0.35);
+  --amber-bd:  rgba(29,32,35,0.18);
+  --blue:      #1463f3;
+  --blue-bg:   rgba(132,164,252,0.12);
+  --blue-bd:   rgba(20,99,243,0.25);
+  --red:       #8b1f1f;
+  --red-bg:    #fdf0f0;
+  --red-bd:    rgba(139,31,31,0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:        #1d2023;
+    --surface:   #252a2e;
+    --border:    rgba(132,164,252,0.12);
+    --border-md: rgba(132,164,252,0.2);
+    --text:      #ccd0d8;
+    --muted:     #7a8494;
+    --faint:     #3a4048;
+    --ink:       #ccd0d8;
+    --green:     #84a4fc;
+    --green-bg:  rgba(132,164,252,0.1);
+    --green-bd:  rgba(132,164,252,0.25);
+    --amber:     #ccd0d8;
+    --amber-bg:  rgba(204,208,216,0.08);
+    --amber-bd:  rgba(204,208,216,0.2);
+    --blue:      #84a4fc;
+    --blue-bg:   rgba(132,164,252,0.1);
+    --blue-bd:   rgba(132,164,252,0.25);
+    --red:       #f47070;
+    --red-bg:    rgba(244,112,112,0.08);
+    --red-bd:    rgba(244,112,112,0.2);
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.page { max-width: 680px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+
+/* ── Hero ── */
+.hero { margin-bottom: 3rem; }
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.9rem;
+}
+.hero-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+.hero-title em { font-style: italic; font-weight: 300; }
+.hero-sub {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* ── Pipeline pills ── */
+.pipeline {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 1.5rem 0 2.5rem;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.pipe-step {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  color: #1463f3;                          
+  background: rgba(20,99,243,0.06);        
+  border: 0.5px solid rgba(20,99,243,0.2);
+  border-radius: 3px;
+  padding: 0.25rem 0.55rem;
+}
+.pipe-arrow {
+  font-size: 0.65rem;
+  color: var(--faint);
+  margin: 0 0.1rem;
+}
+
+/* ── Input area ── */
+.input-section { margin-bottom: 1.5rem; }
+.input-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.textarea-wrap {
+  position: relative;
+  background: var(--surface);
+  border: 0.5px solid var(--border-md);
+  border-radius: 10px;
+  transition: border-color 0.15s;
+}
+.textarea-wrap:focus-within { border-color: var(--text); }
+
+textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  padding: 1rem 1.1rem 0.5rem;
+  resize: none;
+  min-height: 80px;
+}
+textarea::placeholder { color: var(--faint); }
+
+.textarea-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.8rem 0.6rem;
+  border-top: 0.5px solid var(--border);
+}
+.hint {
+  font-size: 0.72rem;
+  color: var(--faint);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── Submit button ── */
+.submit-btn {
+  background: #1463f3;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 6px;
+  padding: 0.45rem 1.1rem;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.submit-btn:hover   { opacity: 0.8; }
+.submit-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.submit-btn svg { width: 13px; height: 13px; }
+
+/* ── Example chips ── */
+.examples-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--faint);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 2rem; }
+.chip {
+  font-size: 0.78rem;
+  color: var(--muted);
+  background: var(--surface);
+  border: 0.5px solid var(--border-md);
+  border-radius: 4px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  transition: all 0.12s;
+  font-family: 'DM Sans', sans-serif;
+}
+.chip:hover { color: var(--text); border-color: var(--text); }
+
+/* ── Divider ── */
+hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
+
+/* ── Error ── */
+.error-block {
+  background: var(--red-bg);
+  border: 0.5px solid var(--red-bd);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.88rem;
+  color: var(--red);
+  display: none;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Loader ── */
+.loader {
+  display: none;
+  padding: 2rem 0;
+  text-align: center;
+}
+.loader-dots { display: flex; justify-content: center; gap: 6px; margin-bottom: 0.75rem; }
+.loader-dot {
+  width: 6px; height: 6px;
+  background: var(--faint);
+  border-radius: 50%;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+.loader-dot:nth-child(2) { animation-delay: 0.2s; }
+.loader-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50%       { opacity: 1;   transform: scale(1.1); }
+}
+.loader-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--faint);
+  letter-spacing: 0.06em;
+}
+
+/* ── Result ── */
+.result { display: none; }
+
+.result-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.result-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.55rem;
+  border-radius: 3px;
+  border: 0.5px solid;
+}
+.badge-green  { color: var(--green);  background: var(--green-bg);  border-color: var(--green-bd); }
+.badge-amber  { color: var(--amber);  background: var(--amber-bg);  border-color: var(--amber-bd); }
+.badge-blue   { color: var(--blue);   background: var(--blue-bg);   border-color: var(--blue-bd);  }
+
+/* ── Confidence ── */
+.conf-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+.conf-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--faint);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  min-width: 70px;
+}
+.conf-track {
+  flex: 1;
+  height: 3px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.conf-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.conf-pct {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  min-width: 2.5rem;
+  text-align: right;
+}
+
+/* ── Answer block ── */
+.answer-card {
+  background: var(--surface);
+  border: 0.5px solid var(--border-md);
+  border-radius: 10px;
+  padding: 1.4rem 1.5rem;
+  margin-bottom: 1rem;
+}
+.answer-q {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.5px solid var(--border);
+}
+.answer-text {
+  font-size: 0.93rem;
+  line-height: 1.8;
+  color: var(--ink);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ── Verification note ── */
+.verification-note {
+  font-size: 0.78rem;
+  color: var(--faint);
+  font-style: italic;
+  padding: 0 0.2rem;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+/* ── Ask another ── */
+.ask-another {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.ask-another button {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  color: var(--muted);
+  background: none;
+  border: 0.5px solid var(--border-md);
+  border-radius: 5px;
+  padding: 0.45rem 1rem;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.ask-another button:hover { color: var(--text); border-color: var(--text); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-eyebrow">Agent-RAG · Qdrant · Groq Llama3 · DSPy</div>
+    <h1 class="hero-title">Agentic <em>Math Tutor</em></h1>
+    <p class="hero-sub">Ask any math question. Retrieved from a vector knowledge base, or solved by Llama3 and stored for next time.</p>
+  </div>
+
+  <!-- Pipeline -->
+  <div class="pipeline">
+    <span class="pipe-step">guardrails</span>
+    <span class="pipe-arrow">→</span>
+    <span class="pipe-step">qdrant search</span>
+    <span class="pipe-arrow">→</span>
+    <span class="pipe-step">llm fallback</span>
+    <span class="pipe-arrow">→</span>
+    <span class="pipe-step">store in db</span>
+    <span class="pipe-arrow">→</span>
+    <span class="pipe-step">dspy verify</span>
+  </div>
+
+  <!-- Input -->
+  <div class="input-section">
+    <span class="input-label">Your question</span>
+    <div class="textarea-wrap">
+      <textarea
+        id="questionInput"
+        rows="3"
+        placeholder="e.g. Solve x² + 5x + 6 = 0"
+      ></textarea>
+      <div class="textarea-footer">
+        <span class="hint">Ctrl + Enter to submit</span>
+        <button class="submit-btn" id="submitBtn" onclick="askQuestion()">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+          Ask
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Examples -->
+  <div class="examples-label">Try an example</div>
+  <div class="chips">
+    <span class="chip" onclick="setQ(this)">Solve x² + 5x + 6 = 0</span>
+    <span class="chip" onclick="setQ(this)">Derivative of x³ + 2x²</span>
+    <span class="chip" onclick="setQ(this)">Pythagorean theorem</span>
+    <span class="chip" onclick="setQ(this)">Integrate ∫x² dx</span>
+    <span class="chip" onclick="setQ(this)">Probability of two sixes</span>
+    <span class="chip" onclick="setQ(this)">What is standard deviation?</span>
+    <span class="chip" onclick="setQ(this)">Capital of France</span>
+  </div>
+
+  <hr/>
+
+  <!-- Error -->
+  <div class="error-block" id="errorBlock"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-dots">
+      <div class="loader-dot"></div>
+      <div class="loader-dot"></div>
+      <div class="loader-dot"></div>
+    </div>
+    <div class="loader-text" id="loaderText">searching knowledge base</div>
+  </div>
+
+  <!-- Result -->
+  <div class="result" id="result">
+
+    <div class="result-meta">
+      <div class="result-badges" id="badges"></div>
+    </div>
+
+    <div class="conf-row">
+      <div class="conf-label">Confidence</div>
+      <div class="conf-track">
+        <div class="conf-fill" id="confFill" style="width: 0%;"></div>
+      </div>
+      <div class="conf-pct" id="confPct">—</div>
+    </div>
+
+    <div class="answer-card">
+      <div class="answer-q" id="answerQ"></div>
+      <div class="answer-text" id="answerText"></div>
+    </div>
+
+    <div class="verification-note" id="verificationNote"></div>
+
+    <div class="ask-another">
+      <button onclick="resetUI()">Ask another question</button>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+const API = 'http://localhost:8000';
+let currentQ = '';
+
+function setQ(el) {
+  document.getElementById('questionInput').value = el.textContent;
+  document.getElementById('questionInput').focus();
+}
+
+function confColor(c) {
+  if (c >= 0.75) return '#1a6644';
+  if (c >= 0.50) return '#7a4d00';
+  return '#8b1f1f';
+}
+
+function sourceBadge(source, stored) {
+  const map = {
+    'vector_db':     ['from database', 'badge-green'],
+    'llm_generated': ['llm generated', 'badge-amber'],
+    'llm_refined':   ['llm refined',   'badge-amber'],
+    'llm_only':      ['llm only',      'badge-blue'],
+  };
+  const [label, cls] = map[source] || [source, 'badge-blue'];
+  let h = `<span class="badge ${cls}">${label}</span>`;
+  if (stored) h += `<span class="badge badge-blue">saved to db</span>`;
+  return h;
+}
+
+function setLoader(text) {
+  document.getElementById('loaderText').textContent = text;
+}
+
+async function askQuestion() {
+  const q = document.getElementById('questionInput').value.trim();
+  if (!q) return;
+  currentQ = q;
+
+  document.getElementById('errorBlock').style.display  = 'none';
+  document.getElementById('result').style.display      = 'none';
+  document.getElementById('loader').style.display      = 'block';
+  document.getElementById('submitBtn').disabled        = true;
+
+  // Cycle loader messages to show pipeline stages
+  const messages = [
+    'checking guardrails',
+    'searching knowledge base',
+    'routing through agent',
+    'verifying answer',
+  ];
+  let mi = 0;
+  const loaderInterval = setInterval(() => {
+    mi = (mi + 1) % messages.length;
+    setLoader(messages[mi]);
+  }, 1800);
+
+  try {
+    const res  = await fetch(`${API}/ask`, {
+      method:  'POST',
+      headers: {'Content-Type': 'application/json'},
+      body:    JSON.stringify({question: q}),
+    });
+    const data = await res.json();
+
+    if (!res.ok) {
+      const eb = document.getElementById('errorBlock');
+      eb.textContent = data.detail || 'Request blocked by guardrails.';
+      eb.style.display = 'block';
+      return;
+    }
+
+    const conf = data.confidence;
+    const pct  = Math.round(conf * 100);
+
+    // Badges
+    document.getElementById('badges').innerHTML =
+      sourceBadge(data.source, data.stored_in_db) +
+      (data.refinement_applied ? '<span class="badge badge-amber">refined</span>' : '');
+
+    // Confidence bar
+    document.getElementById('confFill').style.width      = pct + '%';
+    document.getElementById('confFill').style.background = confColor(conf);
+    document.getElementById('confPct').textContent       = pct + '%';
+
+    // Answer
+    document.getElementById('answerQ').textContent    = q;
+    document.getElementById('answerText').textContent = data.answer;
+
+    // Verification note
+    const note = document.getElementById('verificationNote');
+    if (data.explanation && data.explanation !== 'Verification unavailable.') {
+      note.textContent = 'Verification: ' + data.explanation;
+      note.style.display = 'block';
+    } else {
+      note.style.display = 'none';
+    }
+
+    document.getElementById('result').style.display = 'block';
+
+  } catch (e) {
+    const eb = document.getElementById('errorBlock');
+    eb.textContent = 'Cannot reach the server. Make sure FastAPI is running on port 8000.';
+    eb.style.display = 'block';
+  } finally {
+    clearInterval(loaderInterval);
+    document.getElementById('loader').style.display  = 'none';
+    document.getElementById('submitBtn').disabled    = false;
+  }
+}
+
+function resetUI() {
+  document.getElementById('result').style.display     = 'none';
+  document.getElementById('errorBlock').style.display = 'none';
+  document.getElementById('questionInput').value      = '';
+  document.getElementById('questionInput').focus();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('questionInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter' && e.ctrlKey) askQuestion();
+  });
+});
+</script>
+</body>
+</html>
