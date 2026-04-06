@@ -393,3 +393,1718 @@ HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/searc
 DB hit — score: 1.000
 Verifying answer...
 HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Loading agent...
+Initialising MCPRouter...
+Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+Use pytorch device_name: cpu
+HTTP Request: GET http://localhost:6333/collections "HTTP/1.1 200 OK"
+QdrantManager ready — collection: math_knowledge
+GroqLLM ready — model: llama-3.3-70b-versatile
+DSPy configured via dspy.OpenAI fallback
+DSPyVerifier ready (fallback=False)
+MCPRouter ready
+Agent ready
+Searching Qdrant for: Solve x² + 5x + 6 = 0
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 1.000
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1completions "HTTP/1.1 404 Not Found"
+DSPy verify error: Error code: 404 - {'error': {'message': 'Unknown request URL: POST /openai/v1completions. Please check the URL for typos, or see the docs at https://console.groq.com/docs/', 'type': 'invalid_request_error', 'code': 'unknown_url'}} — switching to fallback
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is standard deviation?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 0.759
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Initialising MCPRouter...
+Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+Use pytorch device_name: cpu
+Initialising MCPRouter...
+Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+Use pytorch device_name: cpu
+HTTP Request: GET http://localhost:6333/collections "HTTP/1.1 200 OK"
+QdrantManager ready — collection: math_knowledge
+GroqLLM ready — model: llama-3.3-70b-versatile
+DSPy configured via dspy.OpenAI fallback
+DSPyVerifier ready (fallback=False)
+MCPRouter ready
+Searching Qdrant for: Solve x² + 5x + 6 = 0
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 1.000
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1completions "HTTP/1.1 404 Not Found"
+DSPy verify error: Error code: 404 - {'error': {'message': 'Unknown request URL: POST /openai/v1completions. Please check the URL for typos, or see the docs at https://console.groq.com/docs/', 'type': 'invalid_request_error', 'code': 'unknown_url'}} — switching to fallback
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Solve 2x² - 7x + 3 = 0
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=f900e7b2
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Solve x² - 9 = 0
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=3cabf418
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the discriminant of x² + 4x + 4 = 0
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=4242debb
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Solve x² + x - 12 = 0
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=d5bc63d0
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the quadratic formula?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 0.981
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Simplify (x² - 4) / (x - 2)
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=6150a27e
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Expand (x + 3)²
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=29be9307
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Factor x² - 5x + 6
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=4949a3e2
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Solve the inequality 2x + 3 > 7
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=26b5b764
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Initialising MCPRouter...
+Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+Use pytorch device_name: cpu
+HTTP Request: GET http://localhost:6333/collections "HTTP/1.1 200 OK"
+QdrantManager ready — collection: math_knowledge
+GroqLLM ready — model: llama-3.3-70b-versatile
+DSPy configured via dspy.OpenAI fallback
+DSPyVerifier ready (fallback=False)
+MCPRouter ready
+Searching Qdrant for: Solve x² + 5x + 6 = 0
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 1.000
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1completions "HTTP/1.1 404 Not Found"
+DSPy verify error: Error code: 404 - {'error': {'message': 'Unknown request URL: POST /openai/v1completions. Please check the URL for typos, or see the docs at https://console.groq.com/docs/', 'type': 'invalid_request_error', 'code': 'unknown_url'}} — switching to fallback
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Solve 2x² - 7x + 3 = 0
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 1.000
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Solve x² - 9 = 0
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 1.000
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the discriminant of x² + 4x + 4 = 0
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 1.000
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Solve x² + x - 12 = 0
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 1.000
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the quadratic formula?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 0.981
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Simplify (x² - 4) / (x - 2)
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 1.000
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Expand (x + 3)²
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 1.000
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Factor x² - 5x + 6
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 1.000
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Solve the inequality 2x + 3 > 7
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 1.000
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the derivative of x³?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=832df230
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the derivative of sin(x)?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=ffde868e
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the derivative of e^x?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=215a46a0
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the derivative of f(x) = x³ + 2x² - 5x + 1
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=ce6dfc0a
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the derivative of f(x) = x² · sin(x) using the product 
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 0.767
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Low confidence (0.200) — refining...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm_refined id=7604a7d0
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=206ca790
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=a578b483
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 1.000
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Low confidence (0.400) — refining...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm_refined id=00c79d8b
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 0.847
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Low confidence (0.200) — refining...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm_refined id=db75a709
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=5ca7a7ef
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 0.799
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=f2fe6763
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the Pythagorean theorem?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=bade40af
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the hypotenuse of a right triangle with legs 3 and 4
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=de7c3ab2
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the area of a circle with radius 5
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=44a9912f
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the area of a triangle with base 8 and height 5
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=8f6a49c1
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the volume of a sphere with radius 3
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=1f8dcd02
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the circumference of a circle with diameter 10
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=274e999c
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the area of a rectangle with length 12 and width 7?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=36cbe40d
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the volume of a cylinder with radius 4 and height 10
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=3376a1a1
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is sin(30°)?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=d3cae1a3
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is cos(60°)?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=62811ff2
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is tan(45°)?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=e80a33e1
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is sin(90°)?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 0.806
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Low confidence (0.200) — refining...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm_refined id=f595cf93
+Searching Qdrant for: Verify the identity sin²(x) + cos²(x)
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=420cfe3b
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find sin(x) if cos(x) = 0.6 and x is in the first quadrant
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=56699abe
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the mean of 4, 7, 2, 9, 3?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=0f30a0f7
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the median of 3, 7, 1, 9, 4?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=a9b2043f
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the mode of 2, 3, 3, 5, 7, 3?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=56879974
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the mean of 10, 20, 30, 40, 50
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=086668cb
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the variance of 2, 4, 4, 4, 5, 5, 7, 9
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=9942686f
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the standard deviation of 2, 4, 4, 4, 5, 5, 7, 9?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 0.783
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the probability of rolling a 6 on a fair die?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=3ab9c381
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the probability of flipping heads twice in a row?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=534331b5
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the probability of drawing an ace from a standard de
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=7655d9c4
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: How many ways can you arrange 4 books on a shelf?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=af606f18
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: How many ways can you choose 3 items from 5?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=709bb166
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the probability of rolling two dice and getting a su
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=061aafd7
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the 10th term of the arithmetic sequence 2, 5, 8, 11...
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=006589f9
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the sum of the first 10 terms of 1, 2, 3, 4...
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=b3f7bc74
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the 5th term of the geometric sequence 2, 6, 18...
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=302b1400
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the sum of the infinite geometric series 1 + 1/2 + 1
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=69dfbe3b
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the determinant of [[2,3],[1,4]]?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=8eb1de6d
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the inverse of [[2,0],[0,3]]?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=da0b7fa0
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Multiply matrices [[1,2],[3,4]] and [[5,6],[7,8]]
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=17ae7ef5
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=e339d68d
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=cbedf829
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Simplify log(ab)
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=e5a72df1
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Solve 2^x = 32
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=1bf5422e
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Solve log(x) = 2
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=98515402
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: A train travels 120 km in 2 hours. What is its speed?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=d8b021ee
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: If a shirt costs $80 and is 25% off, what is the sale price?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=ffdd9e53
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find simple interest on $1000 at 5% for 3 years
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=964aabaf
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find compound interest on $1000 at 10% annually for 2 years
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=d927516c
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Two numbers sum to 20 and their product is 96. Find them.
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=d9df1060
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Solve the system: x + y = 10, x - y = 4
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=8aa901e8
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Solve the system: 2x + 3y = 12, x - y = 1
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=bd2902be
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is 15% of 200?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=a6b2161c
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=e7c732a8
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=e2fbbec3
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is 5! (5 factorial)?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=55216cf9
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the GCD of 48 and 18
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=2396c3b7
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the LCM of 12 and 18
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=bad8986d
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Is 97 a prime number?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=ef52169e
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Convert 3/8 to a decimal
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=097dcc76
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Convert 0.6 to a fraction
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=f47b5bb9
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the slope of a line through (1,2) and (3,8)?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=ec6cf09c
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the equation of a line with slope 2 passing through (1,
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=2cbbe8c1
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the distance between points (1,2) and (4,6)
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=7c711021
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the midpoint of (2,4) and (6,8)?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=74376a80
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Evaluate 2³ + 3²
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=2e32444d
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Simplify (2x²)(3x³)
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=6e100542
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Expand (2x - 3)(x + 5)
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=6047dc12
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Solve |x - 3| = 5
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=6547a9d0
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the vertex of y = x² - 4x + 3
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=1c745339
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the range of f(x) = x² + 1?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=ac2b0234
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the inverse of f(x) = 2x + 3
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=a3047721
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the derivative of ln(x)?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=fb040b3e
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=1ec0c407
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the critical points of f(x) = x³ - 3x
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=f4374f2b
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Is f(x) = x³ - 3x increasing or decreasing at x = 2?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=7c8415c6
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the Taylor series of e^x?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=8ce38058
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Solve the differential equation dy/dx = y
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=f187ee72
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the dot product of (1,2,3) and (4,5,6)?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=91b2db57
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the cross product of (1,0,0) and (0,1,0)
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=bea00576
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the magnitude of vector (3,4)?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=53458ab4
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is Bayes theorem?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=75fb0260
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: In a class of 30, 18 like math. What is the probability a ra
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=2f9eba5e
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the expected value of rolling a fair six-sided die?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 0.768
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Low confidence (0.200) — refining...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm_refined id=da54bfff
+Searching Qdrant for: Solve 3x + 7 = 22
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=4dd404f6
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Solve 5x - 3 = 2x + 9
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=502518ba
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Solve x/4 + 3 = 7
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=b87f3ddc
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the sum of interior angles of a triangle?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=3ddff827
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the sum of interior angles of a hexagon?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 0.798
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Low confidence (0.200) — refining...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm_refined id=736cf108
+Searching Qdrant for: Two angles in a triangle are 60° and 80°. Find the third.
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=fb89791d
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is sin²(x) + cos²(x)?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 0.797
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Convert 180 degrees to radians
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=cbdd3767
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 0.815
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Low confidence (0.200) — refining...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm_refined id=8eaad008
+Searching Qdrant for: Find the common difference of 5, 9, 13, 17
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=2d724457
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the common ratio of 3, 6, 12, 24
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=86eb79e5
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the 100th term of 1, 2, 3, 4...?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=f4325a77
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Evaluate C(10,3)
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=62cfbf3f
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Evaluate P(5,2)
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=036c8ead
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the binomial expansion of (x+y)³?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=75a6e1b2
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Solve 4^x = 64
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 0.842
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Low confidence (0.200) — refining...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm_refined id=294904df
+Searching Qdrant for: What is e (Euler's number) approximately?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=303885e7
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=aca5fc5d
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the reciprocal of 3/7?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=4a774a89
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Add fractions 1/3 + 1/4
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=2d435dca
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Multiply fractions 2/3 × 3/4
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 0.753
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Low confidence (0.200) — refining...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm_refined id=d4dbca18
+Searching Qdrant for: Divide fractions 3/4 ÷ 1/2
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 0.899
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Low confidence (0.200) — refining...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm_refined id=7e0132d0
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=2b436731
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=7cccb505
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find all asymptotes of f(x) = 1/(x-2)
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=75140a09
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the Fibonacci sequence?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=f7b01f44
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Solve x² > 4
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=4bb0fb23
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: Find the equation of a circle centered at (0,0) with radius 
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 0.768
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Low confidence (0.200) — refining...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm_refined id=1b4d55cd
+Searching Qdrant for: What is the perimeter of a square with side 6?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=0ebb9642
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: A rectangle has perimeter 30 and length 9. Find its width.
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=2d40310b
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB hit — score: 0.945
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Low confidence (0.200) — refining...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm_refined id=0fb78810
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=8491fb68
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: At what x is f(x) = x² - 4x + 3 at minimum?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=fdc203bb
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What does it mean for a function to be continuous?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=6cb5e810
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: How many diagonals does a pentagon have?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Storing new answer in Qdrant...
+HTTP Request: PUT http://localhost:6333/collections/math_knowledge/points?wait=true "HTTP/1.1 200 OK"
+Stored QA pair in Qdrant — source=llm id=b5fbdf86
+Verifying answer...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+Searching Qdrant for: What is the surface area of a cube with side 4?
+HTTP Request: POST http://localhost:6333/collections/math_knowledge/points/search "HTTP/1.1 200 OK"
+DB miss — calling Groq LLM...
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+Groq API error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01k6dk2rx4f9xra2pa63gs2rp4` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99899, Requested 456. Please try again in 5m6.72s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}

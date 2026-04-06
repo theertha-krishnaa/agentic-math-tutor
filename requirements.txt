@@ -10,3 +10,9 @@ tavily-python==0.3.3
 python-dotenv==1.0.0
 httpx==0.26.0
 numpy==1.26.0
+rank_bm25==0.2.2
+ragas==0.1.7
+datasets==2.18.0
+pandas==2.2.0
+tqdm==4.66.2
+pyyaml==6.0.1
