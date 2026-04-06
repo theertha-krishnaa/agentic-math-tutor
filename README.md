@@ -65,6 +65,19 @@ remove non-math content, cap length
     ▼
 JSON response to client
 ```
+## Evaluation Results
+
+Measured on 150 verified math QA pairs across algebra, calculus, geometry, statistics, trigonometry, and linear algebra.
+
+| Metric | Vector-only baseline | Hybrid BM25 + Re-ranker |
+|---|---|---|
+| Answer faithfulness | 93.2% | 93.8% |
+| Answer correctness | 96.2% | 94.7% |
+| Retrieval hit rate | 18.5% | 100% |
+| Avg latency | 4.67s | 2.98s |
+
+Eval script: `python eval/run_eval.py`  
+Golden dataset: `eval/golden_dataset.json` (150 verified QA pairs)
 
 ---
 
