@@ -2,6 +2,7 @@
 
 > A production-grade agentic RAG backend that answers math questions using a Qdrant vector knowledge base, Groq Llama3 LLM fallback, and DSPy verification — with strict input/output guardrails.
 
+![Eval Gate](https://github.com/theertha-krishnaa/agentic-math-tutor/actions/workflows/eval.yml/badge.svg)
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688?style=flat&logo=fastapi&logoColor=white)
 ![Qdrant](https://img.shields.io/badge/Qdrant-Vector_DB-DC244C?style=flat)
