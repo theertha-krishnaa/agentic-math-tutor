@@ -409,16 +409,18 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
    */
 
   // ── CHANGE THIS after deploying to Vercel ────────────────────────────────
-  const VERCEL_URL = '';
+  const VERCEL_URL = 'https://agentic-math-tutor-bzhz-2xv39jc3k.vercel.app/';
   // ────────────────────────────────────────────────────────────────────────
 
   function resolveAPI() {
     const attr = document.body.getAttribute('data-api');
     if (attr) return attr.replace(/\/$/, '');
-    if (VERCEL_URL) return VERCEL_URL.replace(/\/$/, '');
+
     const { protocol, hostname } = window.location;
     const isLocal = hostname === 'localhost' || hostname === '127.0.0.1' || protocol === 'file:';
     if (isLocal) return 'http://localhost:8000';
+
+    // On Vercel — same domain, use relative URLs
     return '';
   }
 
