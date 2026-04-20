@@ -16,13 +16,13 @@ GROQ_API_KEY         = os.getenv("GROQ_API_KEY")
 
 
 def get_embedding(text: str) -> list:
-    client = Groq(api_key=GROQ_API_KEY)
-    response = client.embeddings.create(
-        model="nomic-embed-text-v1_5",
-        input=text,
+    import httpx
+    response = httpx.post(
+        "https://api.openai.com/v1/embeddings",
+        headers={"Authorization": f"Bearer {os.getenv('OPENAI_API_KEY')}"},
+        json={"model": "text-embedding-3-small", "input": text},
     )
-    return response.data[0].embedding
-
+    return response.json()["data"][0]["embedding"]
 
 class QdrantManager:
     def __init__(self):
