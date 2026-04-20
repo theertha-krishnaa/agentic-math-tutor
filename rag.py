@@ -13,6 +13,20 @@ CONFIDENCE_THRESHOLD = float(os.getenv("CONFIDENCE_THRESHOLD", "0.85"))
 VECTOR_SIZE          = 384
 EMBED_MODEL          = "sentence-transformers/all-MiniLM-L6-v2"
 
+# Vercel's filesystem is read-only except /tmp — fastembed must cache there
+os.environ.setdefault("FASTEMBED_CACHE_PATH", "/tmp/fastembed_cache")
+
+_embedder_instance = None
+
+def get_embedder():
+    global _embedder_instance
+    if _embedder_instance is None:
+        from fastembed import TextEmbedding
+        logger.info("Loading fastembed model...")
+        _embedder_instance = TextEmbedding(model_name=EMBED_MODEL)
+        logger.info("Fastembed model loaded.")
+    return _embedder_instance
+
 
 class QdrantManager:
     def __init__(self):
@@ -20,10 +34,7 @@ class QdrantManager:
         api_key = os.getenv("QDRANT_API_KEY")
 
         if url:
-            self.client = QdrantClient(
-                url=url,
-                api_key=api_key,
-            )
+            self.client = QdrantClient(url=url, api_key=api_key)
             logger.info("Qdrant connected via cloud URL")
         else:
             self.client = QdrantClient(
@@ -40,19 +51,13 @@ class QdrantManager:
         if COLLECTION_NAME not in existing:
             self.client.create_collection(
                 collection_name=COLLECTION_NAME,
-                vectors_config=VectorParams(
-                    size=VECTOR_SIZE,
-                    distance=Distance.COSINE,
-                ),
+                vectors_config=VectorParams(size=VECTOR_SIZE, distance=Distance.COSINE),
             )
             logger.info("Created collection: %s", COLLECTION_NAME)
 
     def _embed(self, text: str) -> list:
-        """Embed text using fastembed (runs locally but is lightweight ~50MB)."""
-        from fastembed import TextEmbedding
-        if not hasattr(self, '_embedder'):
-            self._embedder = TextEmbedding(model_name=EMBED_MODEL)
-        vectors = list(self._embedder.embed([text]))
+        embedder = get_embedder()
+        vectors  = list(embedder.embed([text]))
         return vectors[0].tolist()
 
     def add_document(self, text: str, metadata: dict = None) -> str:
@@ -63,7 +68,6 @@ class QdrantManager:
             collection_name=COLLECTION_NAME,
             points=[PointStruct(id=point_id, vector=vector, payload=payload)],
         )
-        logger.debug("Added document id=%s", point_id)
         return point_id
 
     def add_qa_pair(self, question: str, answer: str, source: str = "llm") -> str:

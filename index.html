@@ -7,7 +7,6 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,300;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap');
 
-/* ── Themes ─────────────────────────────────────────────────────────────── */
 :root {
   --bg:        #f0f3fb;
   --surface:   #ffffff;
@@ -55,20 +54,15 @@
   }
 }
 
-/* ── Reset ────────────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 body {
   background: var(--bg);
   color: var(--text);
   font-family: 'DM Sans', sans-serif;
   min-height: 100vh;
-  padding: 0;
 }
-
 .page { max-width: 680px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
 
-/* ── Hero ─────────────────────────────────────────────────────────────────── */
 .hero { margin-bottom: 3rem; }
 .hero-eyebrow {
   font-family: 'JetBrains Mono', monospace;
@@ -88,14 +82,8 @@ body {
   margin-bottom: 0.6rem;
 }
 .hero-title em { font-style: italic; font-weight: 300; }
-.hero-sub {
-  font-size: 0.9rem;
-  color: var(--muted);
-  font-weight: 300;
-  line-height: 1.6;
-}
+.hero-sub { font-size: 0.9rem; color: var(--muted); font-weight: 300; line-height: 1.6; }
 
-/* ── Pipeline pills ───────────────────────────────────────────────────────── */
 .pipeline {
   display: flex;
   align-items: center;
@@ -113,13 +101,8 @@ body {
   border-radius: 3px;
   padding: 0.25rem 0.55rem;
 }
-.pipe-arrow {
-  font-size: 0.65rem;
-  color: var(--faint);
-  margin: 0 0.1rem;
-}
+.pipe-arrow { font-size: 0.65rem; color: var(--faint); margin: 0 0.1rem; }
 
-/* ── Input area ───────────────────────────────────────────────────────────── */
 .input-section { margin-bottom: 1.5rem; }
 .input-label {
   font-family: 'JetBrains Mono', monospace;
@@ -131,7 +114,6 @@ body {
   display: block;
 }
 .textarea-wrap {
-  position: relative;
   background: var(--surface);
   border: 0.5px solid var(--border-md);
   border-radius: 10px;
@@ -146,7 +128,6 @@ textarea {
   color: var(--text);
   font-family: 'DM Sans', sans-serif;
   font-size: 1rem;
-  font-weight: 400;
   line-height: 1.6;
   padding: 1rem 1.1rem 0.5rem;
   resize: none;
@@ -160,13 +141,8 @@ textarea::placeholder { color: var(--faint); }
   padding: 0.5rem 0.8rem 0.6rem;
   border-top: 0.5px solid var(--border);
 }
-.hint {
-  font-size: 0.72rem;
-  color: var(--faint);
-  font-family: 'JetBrains Mono', monospace;
-}
+.hint { font-size: 0.72rem; color: var(--faint); font-family: 'JetBrains Mono', monospace; }
 
-/* ── Submit button ────────────────────────────────────────────────────────── */
 .submit-btn {
   background: #1463f3;
   color: #ffffff;
@@ -186,7 +162,6 @@ textarea::placeholder { color: var(--faint); }
 .submit-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 .submit-btn svg { width: 13px; height: 13px; }
 
-/* ── Example chips ────────────────────────────────────────────────────────── */
 .examples-label {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.62rem;
@@ -209,10 +184,8 @@ textarea::placeholder { color: var(--faint); }
 }
 .chip:hover { color: var(--text); border-color: var(--text); }
 
-/* ── Divider ──────────────────────────────────────────────────────────────── */
 hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
 
-/* ── Error ────────────────────────────────────────────────────────────────── */
 .error-block {
   background: var(--red-bg);
   border: 0.5px solid var(--red-bd);
@@ -224,12 +197,7 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
   margin-bottom: 1.5rem;
 }
 
-/* ── Loader ───────────────────────────────────────────────────────────────── */
-.loader {
-  display: none;
-  padding: 2rem 0;
-  text-align: center;
-}
+.loader { display: none; padding: 2rem 0; text-align: center; }
 .loader-dots { display: flex; justify-content: center; gap: 6px; margin-bottom: 0.75rem; }
 .loader-dot {
   width: 6px; height: 6px;
@@ -250,7 +218,6 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
   letter-spacing: 0.06em;
 }
 
-/* ── Result ───────────────────────────────────────────────────────────────── */
 .result { display: none; }
 .result-meta {
   display: flex;
@@ -274,13 +241,7 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
 .badge-amber { color: var(--amber); background: var(--amber-bg); border-color: var(--amber-bd); }
 .badge-blue  { color: var(--blue);  background: var(--blue-bg);  border-color: var(--blue-bd);  }
 
-/* ── Confidence ───────────────────────────────────────────────────────────── */
-.conf-row {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.25rem;
-}
+.conf-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
 .conf-label {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.62rem;
@@ -290,18 +251,8 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
   white-space: nowrap;
   min-width: 70px;
 }
-.conf-track {
-  flex: 1;
-  height: 3px;
-  background: var(--border);
-  border-radius: 99px;
-  overflow: hidden;
-}
-.conf-fill {
-  height: 100%;
-  border-radius: 99px;
-  transition: width 0.7s cubic-bezier(0.4,0,0.2,1);
-}
+.conf-track { flex: 1; height: 3px; background: var(--border); border-radius: 99px; overflow: hidden; }
+.conf-fill { height: 100%; border-radius: 99px; transition: width 0.7s cubic-bezier(0.4,0,0.2,1); }
 .conf-pct {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.72rem;
@@ -310,7 +261,6 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
   text-align: right;
 }
 
-/* ── Answer block ─────────────────────────────────────────────────────────── */
 .answer-card {
   background: var(--surface);
   border: 0.5px solid var(--border-md);
@@ -336,7 +286,6 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
   word-break: break-word;
 }
 
-/* ── Verification note ────────────────────────────────────────────────────── */
 .verification-note {
   font-size: 0.78rem;
   color: var(--faint);
@@ -344,9 +293,9 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
   padding: 0 0.2rem;
   margin-top: 0.5rem;
   line-height: 1.5;
+  display: none;
 }
 
-/* ── Ask another ──────────────────────────────────────────────────────────── */
 .ask-another { margin-top: 1.5rem; text-align: center; }
 .ask-another button {
   font-family: 'DM Sans', sans-serif;
@@ -365,14 +314,12 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
 <body>
 <div class="page">
 
-  <!-- Hero -->
   <div class="hero">
     <div class="hero-eyebrow">Agent-RAG · Qdrant · Groq Llama3 · DSPy</div>
     <h1 class="hero-title">Agentic <em>Math Tutor</em></h1>
     <p class="hero-sub">Ask any math question. Retrieved from a vector knowledge base, or solved by Llama3 and stored for next time.</p>
   </div>
 
-  <!-- Pipeline -->
   <div class="pipeline">
     <span class="pipe-step">guardrails</span>
     <span class="pipe-arrow">→</span>
@@ -385,15 +332,10 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
     <span class="pipe-step">dspy verify</span>
   </div>
 
-  <!-- Input -->
   <div class="input-section">
     <span class="input-label">Your question</span>
     <div class="textarea-wrap">
-      <textarea
-        id="questionInput"
-        rows="3"
-        placeholder="e.g. Solve x² + 5x + 6 = 0"
-      ></textarea>
+      <textarea id="questionInput" rows="3" placeholder="e.g. Solve x² + 5x + 6 = 0"></textarea>
       <div class="textarea-footer">
         <span class="hint">Ctrl + Enter to submit</span>
         <button class="submit-btn" id="submitBtn" onclick="askQuestion()">
@@ -406,7 +348,6 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
     </div>
   </div>
 
-  <!-- Examples -->
   <div class="examples-label">Try an example</div>
   <div class="chips">
     <span class="chip" onclick="setQ(this)">Solve x² + 5x + 6 = 0</span>
@@ -420,10 +361,8 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
 
   <hr/>
 
-  <!-- Error -->
   <div class="error-block" id="errorBlock"></div>
 
-  <!-- Loader -->
   <div class="loader" id="loader">
     <div class="loader-dots">
       <div class="loader-dot"></div>
@@ -433,7 +372,6 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
     <div class="loader-text" id="loaderText">searching knowledge base</div>
   </div>
 
-  <!-- Result -->
   <div class="result" id="result">
     <div class="result-meta">
       <div class="result-badges" id="badges"></div>
@@ -456,8 +394,8 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
   </div>
 
 </div>
-
 <script>
+<<<<<<< HEAD:api/index.html
   /**
    * API URL resolution — works in three environments:
    *
@@ -471,39 +409,31 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
    */
 
   // ── CHANGE THIS after deploying to Vercel ────────────────────────────────
-  const VERCEL_URL = 'https://agentic-math-tutor-bzhz.vercel.app';   // e.g. 'https://math-tutor-xyz.vercel.app'
+  const VERCEL_URL = 'https://agentic-math-tutor-bzhz.vercel.app';
   // ────────────────────────────────────────────────────────────────────────
 
   function resolveAPI() {
-    // 1. Explicit override via <body data-api="...">
     const attr = document.body.getAttribute('data-api');
     if (attr) return attr.replace(/\/$/, '');
-
-    // 2. Hardcoded Vercel URL (set above)
     if (VERCEL_URL) return VERCEL_URL.replace(/\/$/, '');
-
-    // 3. Same origin (works when frontend is served from Vercel directly)
     const { protocol, hostname } = window.location;
     const isLocal = hostname === 'localhost' || hostname === '127.0.0.1' || protocol === 'file:';
     if (isLocal) return 'http://localhost:8000';
-
-    // 4. Relative — same domain as whatever is serving this HTML
     return '';
   }
 
   const API = resolveAPI();
 
-  // ── Helpers ───────────────────────────────────────────────────────────────
   function setQ(el) {
     document.getElementById('questionInput').value = el.textContent;
     document.getElementById('questionInput').focus();
   }
 
-  function confColor(c) {
+  function confColor(c, verified) {
     if (!verified) return '#8b1f1f';
-    if (c >= 0.75) return '#1a6644';
-    if (c >= 0.50) return '#7a4d00';
-           return '#8b1f1f';
+    if (c >= 0.75)  return '#1a6644';
+    if (c >= 0.50)  return '#7a4d00';
+    return '#8b1f1f';
   }
 
   function sourceBadge(source, stored) {
@@ -519,11 +449,6 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
     return h;
   }
 
-  function setLoader(text) {
-    document.getElementById('loaderText').textContent = text;
-  }
-
-  // ── Main ask ──────────────────────────────────────────────────────────────
   async function askQuestion() {
     const q = document.getElementById('questionInput').value.trim();
     if (!q) return;
@@ -532,9 +457,6 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
     document.getElementById('result').style.display     = 'none';
     document.getElementById('loader').style.display     = 'block';
     document.getElementById('submitBtn').disabled       = true;
-    document.getElementById('confFill').style.width      = pct + '%';
-    document.getElementById('confFill').style.background = confColor(conf, data.verified);
-    document.getElementById('confPct').textContent       = pct + '%';
 
     const messages = [
       'checking guardrails',
@@ -543,9 +465,10 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
       'verifying answer',
     ];
     let mi = 0;
+    document.getElementById('loaderText').textContent = messages[0];
     const loaderInterval = setInterval(() => {
       mi = (mi + 1) % messages.length;
-      setLoader(messages[mi]);
+      document.getElementById('loaderText').textContent = messages[mi];
     }, 1800);
 
     try {
@@ -563,15 +486,16 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
         return;
       }
 
-      const conf = data.confidence;
-      const pct  = Math.round(conf * 100);
+      const conf     = data.confidence;
+      const pct      = Math.round(conf * 100);
+      const verified = data.verified;
 
       document.getElementById('badges').innerHTML =
         sourceBadge(data.source, data.stored_in_db) +
         (data.refinement_applied ? '<span class="badge badge-amber">refined</span>' : '');
 
       document.getElementById('confFill').style.width      = pct + '%';
-      document.getElementById('confFill').style.background = confColor(conf);
+      document.getElementById('confFill').style.background = confColor(conf, verified);
       document.getElementById('confPct').textContent       = pct + '%';
 
       document.getElementById('answerQ').textContent    = q;
@@ -589,7 +513,7 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
 
     } catch (e) {
       const eb = document.getElementById('errorBlock');
-      eb.textContent   = `Cannot reach the API${API ? ' at ' + API : ''}. Check your VERCEL_URL setting or make sure FastAPI is running.`;
+      eb.textContent   = `Cannot reach the API at ${API}. Check your connection or VERCEL_URL.`;
       eb.style.display = 'block';
     } finally {
       clearInterval(loaderInterval);
