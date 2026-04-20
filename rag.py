@@ -4,45 +4,37 @@ import logging
 from dotenv import load_dotenv
 from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, VectorParams, PointStruct
+from groq import Groq
 
 load_dotenv()
 logger = logging.getLogger(__name__)
 
 COLLECTION_NAME      = os.getenv("COLLECTION_NAME", "math_knowledge")
 CONFIDENCE_THRESHOLD = float(os.getenv("CONFIDENCE_THRESHOLD", "0.85"))
-VECTOR_SIZE          = 384
-EMBED_MODEL          = "sentence-transformers/all-MiniLM-L6-v2"
+VECTOR_SIZE          = 1536
+GROQ_API_KEY         = os.getenv("GROQ_API_KEY")
 
-# Vercel's filesystem is read-only except /tmp — fastembed must cache there
-os.environ.setdefault("FASTEMBED_CACHE_PATH", "/tmp/fastembed_cache")
 
-_embedder_instance = None
-
-def get_embedder():
-    global _embedder_instance
-    if _embedder_instance is None:
-        from fastembed import TextEmbedding
-        logger.info("Loading fastembed model...")
-        _embedder_instance = TextEmbedding(model_name=EMBED_MODEL)
-        logger.info("Fastembed model loaded.")
-    return _embedder_instance
+def get_embedding(text: str) -> list:
+    client = Groq(api_key=GROQ_API_KEY)
+    response = client.embeddings.create(
+        model="nomic-embed-text-v1_5",
+        input=text,
+    )
+    return response.data[0].embedding
 
 
 class QdrantManager:
     def __init__(self):
         url     = os.getenv("QDRANT_URL")
         api_key = os.getenv("QDRANT_API_KEY")
-
         if url:
             self.client = QdrantClient(url=url, api_key=api_key)
-            logger.info("Qdrant connected via cloud URL")
         else:
             self.client = QdrantClient(
                 host=os.getenv("QDRANT_HOST", "localhost"),
                 port=int(os.getenv("QDRANT_PORT", "6333")),
             )
-            logger.info("Qdrant connected via host:port")
-
         self._ensure_collection()
         logger.info("QdrantManager ready — collection: %s", COLLECTION_NAME)
 
@@ -55,13 +47,8 @@ class QdrantManager:
             )
             logger.info("Created collection: %s", COLLECTION_NAME)
 
-    def _embed(self, text: str) -> list:
-        embedder = get_embedder()
-        vectors  = list(embedder.embed([text]))
-        return vectors[0].tolist()
-
     def add_document(self, text: str, metadata: dict = None) -> str:
-        vector   = self._embed(text)
+        vector   = get_embedding(text)
         point_id = str(uuid.uuid4())
         payload  = {"text": text, **(metadata or {})}
         self.client.upsert(
@@ -71,7 +58,7 @@ class QdrantManager:
         return point_id
 
     def add_qa_pair(self, question: str, answer: str, source: str = "llm") -> str:
-        vector   = self._embed(question)
+        vector   = get_embedding(question)
         point_id = str(uuid.uuid4())
         payload  = {
             "text":     answer,
@@ -87,7 +74,7 @@ class QdrantManager:
         return point_id
 
     def search(self, query: str, top_k: int = 3) -> list:
-        vector  = self._embed(query)
+        vector  = get_embedding(query)
         results = self.client.query_points(
             collection_name=COLLECTION_NAME,
             query=vector,
