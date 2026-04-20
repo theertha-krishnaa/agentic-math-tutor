@@ -11,18 +11,23 @@ logger = logging.getLogger(__name__)
 
 COLLECTION_NAME      = os.getenv("COLLECTION_NAME", "math_knowledge")
 CONFIDENCE_THRESHOLD = float(os.getenv("CONFIDENCE_THRESHOLD", "0.85"))
-VECTOR_SIZE          = 1536
+VECTOR_SIZE          = 384
 GROQ_API_KEY         = os.getenv("GROQ_API_KEY")
 
 
 def get_embedding(text: str) -> list:
     import httpx
+    HF_TOKEN = os.getenv("HF_TOKEN", "")
     response = httpx.post(
-        "https://api.openai.com/v1/embeddings",
-        headers={"Authorization": f"Bearer {os.getenv('OPENAI_API_KEY')}"},
-        json={"model": "text-embedding-3-small", "input": text},
+        "https://router.huggingface.co/hf-inference/models/sentence-transformers/all-MiniLM-L6-v2/pipeline/feature-extraction",
+        headers={"Authorization": f"Bearer {HF_TOKEN}"},
+        json={"inputs": text},
+        timeout=30,
     )
-    return response.json()["data"][0]["embedding"]
+    embedding = response.json()
+    if isinstance(embedding[0], list):
+        embedding = embedding[0]
+    return embedding
 
 class QdrantManager:
     def __init__(self):
