@@ -395,31 +395,12 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
 
 </div>
 <script>
-<<<<<<< HEAD:api/index.html
-  /**
-   * API URL resolution — works in three environments:
-   *
-   *  1. Local dev (file:// or localhost)     → http://localhost:8000
-   *  2. Served from the same Vercel domain   → uses relative URL (/ask)
-   *  3. Served from Framer / external host   → reads data-api attribute
-   *
-   * To use from Framer, add data-api to the <body> tag, e.g.:
-   *   <body data-api="https://math-tutor-xyz.vercel.app">
-   * Or just hardcode your Vercel URL in the VERCEL_URL constant below.
-   */
-
-  // ── CHANGE THIS after deploying to Vercel ────────────────────────────────
-  // ────────────────────────────────────────────────────────────────────────
-
   function resolveAPI() {
     const attr = document.body.getAttribute('data-api');
     if (attr) return attr.replace(/\/$/, '');
-
     const { protocol, hostname } = window.location;
     const isLocal = hostname === 'localhost' || hostname === '127.0.0.1' || protocol === 'file:';
     if (isLocal) return 'http://localhost:8000';
-
-    // On Vercel — same domain, use relative URLs
     return '';
   }
 
@@ -514,7 +495,7 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
 
     } catch (e) {
       const eb = document.getElementById('errorBlock');
-      eb.textContent   = `Cannot reach the API at ${API}. Check your connection or VERCEL_URL.`;
+      eb.textContent   = `Cannot reach the API. Check your connection.`;
       eb.style.display = 'block';
     } finally {
       clearInterval(loaderInterval);
