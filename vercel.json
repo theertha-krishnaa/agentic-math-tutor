@@ -1,10 +1,14 @@
 {
   "version": 2,
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "api/index.py", "use": "@vercel/python" }
+  ],
   "routes": [
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/ask", "dest": "/api/index" },
-    { "src": "/health", "dest": "/api/index" },
-    { "src": "/stats", "dest": "/api/index" },
-    { "src": "/add-knowledge", "dest": "/api/index" }
+    { "src": "/ask", "dest": "/api/index.py" },
+    { "src": "/health", "dest": "/api/index.py" },
+    { "src": "/stats", "dest": "/api/index.py" },
+    { "src": "/add-knowledge", "dest": "/api/index.py" },
+    { "src": "/", "dest": "/index.html" }
   ]
 }
