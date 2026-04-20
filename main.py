@@ -22,8 +22,6 @@ ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "*").split(",")
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     logger.info("Loading agent on startup...")
-    from rag import get_encoder
-    get_encoder()                    # ← warm up the model now
     app.state.router = MCPRouter()
     logger.info("Agent ready ✓")
     yield
