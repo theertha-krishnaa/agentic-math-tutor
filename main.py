@@ -17,9 +17,7 @@ ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "*").split(",")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    logger.info("Loading agent on startup...")
-    app.state.router = MCPRouter()
-    logger.info("Agent ready ✓")
+    logger.info("App starting...")
     yield
     logger.info("Shutting down.")
 
@@ -37,6 +35,13 @@ app.add_middleware(
     allow_methods     = ["*"],
     allow_headers     = ["*"],
 )
+
+def get_router():
+    if not hasattr(get_router, '_instance'):
+        logger.info("Initialising MCPRouter...")
+        get_router._instance = MCPRouter()
+        logger.info("MCPRouter ready.")
+    return get_router._instance
 
 class QuestionRequest(BaseModel):
     question: str
@@ -77,7 +82,7 @@ async def ask(body: QuestionRequest):
     check = validate_input(body.question)
     if not check["allowed"]:
         raise HTTPException(status_code=400, detail=check["reason"])
-    result = app.state.router.route(body.question)
+    result = get_router().route(body.question)
     result["answer"] = sanitize_output(result["answer"])
     return result
 
