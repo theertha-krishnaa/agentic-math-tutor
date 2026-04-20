@@ -1,0 +1,29 @@
+BEFORE
+
+============================================================
+  RESULTS
+============================================================
+  Questions evaluated:     20
+  Avg faithfulness:        81.0%
+  Avg answer correctness:  90.0%
+  Retrieval hit rate:      50.0%  (DB hits, no LLM needed)
+  LLM call rate:           50.0%
+  Refinement rate:         50.0%
+  Guardrail false pos:     0.0%  (math Q incorrectly blocked)
+  Error rate:              0.0%
+  Avg latency:             3.22s
+  P95 latency:             6.27s
+
+  Source breakdown:
+    vector_db              10  (50.0%)
+    llm_generated          10  (50.0%)
+    llm_refined             0  (0.0%)
+    llm_only                0  (0.0%)
+
+  Correctness by topic:
+    word_problem         90.0%  (20 questions)
+
+============================================================
+
+Full results saved to: eval/baseline_results.json
+PASS: All metrics above thresholds.

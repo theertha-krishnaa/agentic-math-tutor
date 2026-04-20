@@ -42,6 +42,7 @@ class MCPRouter:
             # ── Step 2: LLM fallback ──────────────────────────────────────────
             logger.info("DB miss — calling Groq LLM...")
             llm_result = self.llm.solve(question)
+            print("LLM RESULT:", llm_result) 
             answer     = llm_result.get("answer", "")
 
             if not answer:

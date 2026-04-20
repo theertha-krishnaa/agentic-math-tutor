@@ -2,7 +2,6 @@
 
 > A production-grade agentic RAG backend that answers math questions using a Qdrant vector knowledge base, Groq Llama3 LLM fallback, and DSPy verification — with strict input/output guardrails.
 
-![Eval Gate](https://github.com/theertha-krishnaa/agentic-math-tutor/actions/workflows/eval.yml/badge.svg)
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688?style=flat&logo=fastapi&logoColor=white)
 ![Qdrant](https://img.shields.io/badge/Qdrant-Vector_DB-DC244C?style=flat)
@@ -21,6 +20,7 @@ A student sends a math question → the system searches a vector knowledge base 
 ---
 
 ## Architecture
+
 ```
 Question
     │
@@ -96,6 +96,7 @@ Golden dataset: `eval/golden_dataset.json` (150 verified QA pairs)
 ---
 
 ## Project Structure
+
 ```
 math-tutor/
 ├── main.py               # FastAPI app — endpoints, startup, middleware
@@ -117,12 +118,14 @@ math-tutor/
 ## Getting Started
 
 ### 1. Clone the repo
+
 ```bash
 git clone https://github.com/YOUR_USERNAME/agentic-math-tutor.git
 cd agentic-math-tutor
 ```
 
 ### 2. Create environment
+
 ```bash
 conda create -n math-tutor python=3.10 -y
 conda activate math-tutor
@@ -137,6 +140,7 @@ pip install -r requirements.txt
 | Tavily | [app.tavily.com](https://app.tavily.com) | 1,000 searches/month |
 
 ### 4. Configure environment
+
 ```bash
 cp .env.example .env
 ```
@@ -153,11 +157,13 @@ CONFIDENCE_THRESHOLD=0.75
 ```
 
 ### 5. Start Qdrant
+
 ```bash
 docker run -p 6333:6333 -v qdrant_storage:/qdrant/storage qdrant/qdrant
 ```
 
 ### 6. Seed the knowledge base
+
 ```bash
 python seed_knowledge.py
 ```
@@ -165,6 +171,7 @@ python seed_knowledge.py
 Loads 18 math documents covering algebra, calculus, geometry, statistics, trigonometry, linear algebra, probability, and sequences.
 
 ### 7. Start the server
+
 ```bash
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
@@ -181,11 +188,13 @@ Or use the auto-generated API docs at `http://localhost:8000/docs`.
 ### `POST /ask`
 
 Submit a math question. Returns a verified answer with source and confidence.
+
 ```bash
 curl -X POST http://localhost:8000/ask \
   -H "Content-Type: application/json" \
   -d '{"question": "Solve x² + 5x + 6 = 0"}'
 ```
+
 ```json
 {
   "answer": "Using the quadratic formula...\nx = -2 or x = -3",
@@ -209,6 +218,7 @@ curl -X POST http://localhost:8000/ask \
 ### `POST /add-knowledge`
 
 Add a document to the knowledge base at runtime.
+
 ```bash
 curl -X POST http://localhost:8000/add-knowledge \
   -H "Content-Type: application/json" \
@@ -273,5 +283,5 @@ MIT — free to use, modify, and distribute.
 
 ## Author
 
-Built by [Theertha Krishna](https://github.com/theertha-krishnaa)  
-Connect on [LinkedIn](https://www.linkedin.com/in/theertha-krishna-5003b1256/)
+Built by [Your Name](https://github.com/YOUR_USERNAME)  
+Connect on [LinkedIn](https://linkedin.com/in/YOUR_PROFILE)

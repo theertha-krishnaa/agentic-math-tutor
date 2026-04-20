@@ -7,9 +7,7 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,300;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap');
 
-Open frontend/index.html and find the :root block at the top of the CSS. Replace just the two :root blocks (light and dark) with these:
-css:
-
+/* ── Themes ─────────────────────────────────────────────────────────────── */
 :root {
   --bg:        #f0f3fb;
   --surface:   #ffffff;
@@ -32,7 +30,6 @@ css:
   --red-bg:    #fdf0f0;
   --red-bd:    rgba(139,31,31,0.2);
 }
-
 @media (prefers-color-scheme: dark) {
   :root {
     --bg:        #1d2023;
@@ -58,6 +55,7 @@ css:
   }
 }
 
+/* ── Reset ────────────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -70,7 +68,7 @@ body {
 
 .page { max-width: 680px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
 
-/* ── Hero ── */
+/* ── Hero ─────────────────────────────────────────────────────────────────── */
 .hero { margin-bottom: 3rem; }
 .hero-eyebrow {
   font-family: 'JetBrains Mono', monospace;
@@ -97,22 +95,20 @@ body {
   line-height: 1.6;
 }
 
-/* ── Pipeline pills ── */
+/* ── Pipeline pills ───────────────────────────────────────────────────────── */
 .pipeline {
   display: flex;
   align-items: center;
-  gap: 0;
-  margin: 1.5rem 0 2.5rem;
   flex-wrap: wrap;
   gap: 0.3rem;
+  margin: 1.5rem 0 2.5rem;
 }
 .pipe-step {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.65rem;
   letter-spacing: 0.06em;
-  color: var(--muted);
-  color: #1463f3;                          
-  background: rgba(20,99,243,0.06);        
+  color: #1463f3;
+  background: rgba(20,99,243,0.06);
   border: 0.5px solid rgba(20,99,243,0.2);
   border-radius: 3px;
   padding: 0.25rem 0.55rem;
@@ -123,7 +119,7 @@ body {
   margin: 0 0.1rem;
 }
 
-/* ── Input area ── */
+/* ── Input area ───────────────────────────────────────────────────────────── */
 .input-section { margin-bottom: 1.5rem; }
 .input-label {
   font-family: 'JetBrains Mono', monospace;
@@ -134,7 +130,6 @@ body {
   margin-bottom: 0.6rem;
   display: block;
 }
-
 .textarea-wrap {
   position: relative;
   background: var(--surface);
@@ -143,7 +138,6 @@ body {
   transition: border-color 0.15s;
 }
 .textarea-wrap:focus-within { border-color: var(--text); }
-
 textarea {
   width: 100%;
   background: transparent;
@@ -159,7 +153,6 @@ textarea {
   min-height: 80px;
 }
 textarea::placeholder { color: var(--faint); }
-
 .textarea-footer {
   display: flex;
   align-items: center;
@@ -173,7 +166,7 @@ textarea::placeholder { color: var(--faint); }
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* ── Submit button ── */
+/* ── Submit button ────────────────────────────────────────────────────────── */
 .submit-btn {
   background: #1463f3;
   color: #ffffff;
@@ -189,11 +182,11 @@ textarea::placeholder { color: var(--faint); }
   align-items: center;
   gap: 6px;
 }
-.submit-btn:hover   { opacity: 0.8; }
+.submit-btn:hover    { opacity: 0.8; }
 .submit-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 .submit-btn svg { width: 13px; height: 13px; }
 
-/* ── Example chips ── */
+/* ── Example chips ────────────────────────────────────────────────────────── */
 .examples-label {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.62rem;
@@ -216,10 +209,10 @@ textarea::placeholder { color: var(--faint); }
 }
 .chip:hover { color: var(--text); border-color: var(--text); }
 
-/* ── Divider ── */
+/* ── Divider ──────────────────────────────────────────────────────────────── */
 hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
 
-/* ── Error ── */
+/* ── Error ────────────────────────────────────────────────────────────────── */
 .error-block {
   background: var(--red-bg);
   border: 0.5px solid var(--red-bd);
@@ -231,7 +224,7 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
   margin-bottom: 1.5rem;
 }
 
-/* ── Loader ── */
+/* ── Loader ───────────────────────────────────────────────────────────────── */
 .loader {
   display: none;
   padding: 2rem 0;
@@ -257,9 +250,8 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
   letter-spacing: 0.06em;
 }
 
-/* ── Result ── */
+/* ── Result ───────────────────────────────────────────────────────────────── */
 .result { display: none; }
-
 .result-meta {
   display: flex;
   align-items: center;
@@ -278,11 +270,11 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
   border-radius: 3px;
   border: 0.5px solid;
 }
-.badge-green  { color: var(--green);  background: var(--green-bg);  border-color: var(--green-bd); }
-.badge-amber  { color: var(--amber);  background: var(--amber-bg);  border-color: var(--amber-bd); }
-.badge-blue   { color: var(--blue);   background: var(--blue-bg);   border-color: var(--blue-bd);  }
+.badge-green { color: var(--green); background: var(--green-bg); border-color: var(--green-bd); }
+.badge-amber { color: var(--amber); background: var(--amber-bg); border-color: var(--amber-bd); }
+.badge-blue  { color: var(--blue);  background: var(--blue-bg);  border-color: var(--blue-bd);  }
 
-/* ── Confidence ── */
+/* ── Confidence ───────────────────────────────────────────────────────────── */
 .conf-row {
   display: flex;
   align-items: center;
@@ -318,7 +310,7 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
   text-align: right;
 }
 
-/* ── Answer block ── */
+/* ── Answer block ─────────────────────────────────────────────────────────── */
 .answer-card {
   background: var(--surface);
   border: 0.5px solid var(--border-md);
@@ -344,7 +336,7 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
   word-break: break-word;
 }
 
-/* ── Verification note ── */
+/* ── Verification note ────────────────────────────────────────────────────── */
 .verification-note {
   font-size: 0.78rem;
   color: var(--faint);
@@ -354,11 +346,8 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
   line-height: 1.5;
 }
 
-/* ── Ask another ── */
-.ask-another {
-  margin-top: 1.5rem;
-  text-align: center;
-}
+/* ── Ask another ──────────────────────────────────────────────────────────── */
+.ask-another { margin-top: 1.5rem; text-align: center; }
 .ask-another button {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.82rem;
@@ -446,155 +435,181 @@ hr { border: none; border-top: 0.5px solid var(--border); margin: 1.5rem 0; }
 
   <!-- Result -->
   <div class="result" id="result">
-
     <div class="result-meta">
       <div class="result-badges" id="badges"></div>
     </div>
-
     <div class="conf-row">
       <div class="conf-label">Confidence</div>
       <div class="conf-track">
-        <div class="conf-fill" id="confFill" style="width: 0%;"></div>
+        <div class="conf-fill" id="confFill" style="width:0%"></div>
       </div>
       <div class="conf-pct" id="confPct">—</div>
     </div>
-
     <div class="answer-card">
-      <div class="answer-q" id="answerQ"></div>
+      <div class="answer-q"    id="answerQ"></div>
       <div class="answer-text" id="answerText"></div>
     </div>
-
     <div class="verification-note" id="verificationNote"></div>
-
     <div class="ask-another">
       <button onclick="resetUI()">Ask another question</button>
     </div>
-
   </div>
 
 </div>
 
 <script>
-const API = 'http://localhost:8000';
-let currentQ = '';
+  /**
+   * API URL resolution — works in three environments:
+   *
+   *  1. Local dev (file:// or localhost)     → http://localhost:8000
+   *  2. Served from the same Vercel domain   → uses relative URL (/ask)
+   *  3. Served from Framer / external host   → reads data-api attribute
+   *
+   * To use from Framer, add data-api to the <body> tag, e.g.:
+   *   <body data-api="https://math-tutor-xyz.vercel.app">
+   * Or just hardcode your Vercel URL in the VERCEL_URL constant below.
+   */
 
-function setQ(el) {
-  document.getElementById('questionInput').value = el.textContent;
-  document.getElementById('questionInput').focus();
-}
+  // ── CHANGE THIS after deploying to Vercel ────────────────────────────────
+  const VERCEL_URL = '';   // e.g. 'https://math-tutor-xyz.vercel.app'
+  // ────────────────────────────────────────────────────────────────────────
 
-function confColor(c) {
-  if (c >= 0.75) return '#1a6644';
-  if (c >= 0.50) return '#7a4d00';
-  return '#8b1f1f';
-}
+  function resolveAPI() {
+    // 1. Explicit override via <body data-api="...">
+    const attr = document.body.getAttribute('data-api');
+    if (attr) return attr.replace(/\/$/, '');
 
-function sourceBadge(source, stored) {
-  const map = {
-    'vector_db':     ['from database', 'badge-green'],
-    'llm_generated': ['llm generated', 'badge-amber'],
-    'llm_refined':   ['llm refined',   'badge-amber'],
-    'llm_only':      ['llm only',      'badge-blue'],
-  };
-  const [label, cls] = map[source] || [source, 'badge-blue'];
-  let h = `<span class="badge ${cls}">${label}</span>`;
-  if (stored) h += `<span class="badge badge-blue">saved to db</span>`;
-  return h;
-}
+    // 2. Hardcoded Vercel URL (set above)
+    if (VERCEL_URL) return VERCEL_URL.replace(/\/$/, '');
 
-function setLoader(text) {
-  document.getElementById('loaderText').textContent = text;
-}
+    // 3. Same origin (works when frontend is served from Vercel directly)
+    const { protocol, hostname } = window.location;
+    const isLocal = hostname === 'localhost' || hostname === '127.0.0.1' || protocol === 'file:';
+    if (isLocal) return 'http://localhost:8000';
 
-async function askQuestion() {
-  const q = document.getElementById('questionInput').value.trim();
-  if (!q) return;
-  currentQ = q;
+    // 4. Relative — same domain as whatever is serving this HTML
+    return '';
+  }
 
-  document.getElementById('errorBlock').style.display  = 'none';
-  document.getElementById('result').style.display      = 'none';
-  document.getElementById('loader').style.display      = 'block';
-  document.getElementById('submitBtn').disabled        = true;
+  const API = resolveAPI();
 
-  // Cycle loader messages to show pipeline stages
-  const messages = [
-    'checking guardrails',
-    'searching knowledge base',
-    'routing through agent',
-    'verifying answer',
-  ];
-  let mi = 0;
-  const loaderInterval = setInterval(() => {
-    mi = (mi + 1) % messages.length;
-    setLoader(messages[mi]);
-  }, 1800);
+  // ── Helpers ───────────────────────────────────────────────────────────────
+  function setQ(el) {
+    document.getElementById('questionInput').value = el.textContent;
+    document.getElementById('questionInput').focus();
+  }
 
-  try {
-    const res  = await fetch(`${API}/ask`, {
-      method:  'POST',
-      headers: {'Content-Type': 'application/json'},
-      body:    JSON.stringify({question: q}),
-    });
-    const data = await res.json();
+  function confColor(c) {
+    if (!verified) return '#8b1f1f';
+    if (c >= 0.75) return '#1a6644';
+    if (c >= 0.50) return '#7a4d00';
+           return '#8b1f1f';
+  }
 
-    if (!res.ok) {
-      const eb = document.getElementById('errorBlock');
-      eb.textContent = data.detail || 'Request blocked by guardrails.';
-      eb.style.display = 'block';
-      return;
-    }
+  function sourceBadge(source, stored) {
+    const map = {
+      'vector_db':     ['from database', 'badge-green'],
+      'llm_generated': ['llm generated', 'badge-amber'],
+      'llm_refined':   ['llm refined',   'badge-amber'],
+      'llm_only':      ['llm only',      'badge-blue'],
+    };
+    const [label, cls] = map[source] || [source, 'badge-blue'];
+    let h = `<span class="badge ${cls}">${label}</span>`;
+    if (stored) h += `<span class="badge badge-blue">saved to db</span>`;
+    return h;
+  }
 
-    const conf = data.confidence;
-    const pct  = Math.round(conf * 100);
+  function setLoader(text) {
+    document.getElementById('loaderText').textContent = text;
+  }
 
-    // Badges
-    document.getElementById('badges').innerHTML =
-      sourceBadge(data.source, data.stored_in_db) +
-      (data.refinement_applied ? '<span class="badge badge-amber">refined</span>' : '');
+  // ── Main ask ──────────────────────────────────────────────────────────────
+  async function askQuestion() {
+    const q = document.getElementById('questionInput').value.trim();
+    if (!q) return;
 
-    // Confidence bar
+    document.getElementById('errorBlock').style.display = 'none';
+    document.getElementById('result').style.display     = 'none';
+    document.getElementById('loader').style.display     = 'block';
+    document.getElementById('submitBtn').disabled       = true;
     document.getElementById('confFill').style.width      = pct + '%';
-    document.getElementById('confFill').style.background = confColor(conf);
+    document.getElementById('confFill').style.background = confColor(conf, data.verified);
     document.getElementById('confPct').textContent       = pct + '%';
 
-    // Answer
-    document.getElementById('answerQ').textContent    = q;
-    document.getElementById('answerText').textContent = data.answer;
+    const messages = [
+      'checking guardrails',
+      'searching knowledge base',
+      'routing through agent',
+      'verifying answer',
+    ];
+    let mi = 0;
+    const loaderInterval = setInterval(() => {
+      mi = (mi + 1) % messages.length;
+      setLoader(messages[mi]);
+    }, 1800);
 
-    // Verification note
-    const note = document.getElementById('verificationNote');
-    if (data.explanation && data.explanation !== 'Verification unavailable.') {
-      note.textContent = 'Verification: ' + data.explanation;
-      note.style.display = 'block';
-    } else {
-      note.style.display = 'none';
+    try {
+      const res  = await fetch(`${API}/ask`, {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({ question: q }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        const eb = document.getElementById('errorBlock');
+        eb.textContent   = data.detail || 'Request blocked by guardrails.';
+        eb.style.display = 'block';
+        return;
+      }
+
+      const conf = data.confidence;
+      const pct  = Math.round(conf * 100);
+
+      document.getElementById('badges').innerHTML =
+        sourceBadge(data.source, data.stored_in_db) +
+        (data.refinement_applied ? '<span class="badge badge-amber">refined</span>' : '');
+
+      document.getElementById('confFill').style.width      = pct + '%';
+      document.getElementById('confFill').style.background = confColor(conf);
+      document.getElementById('confPct').textContent       = pct + '%';
+
+      document.getElementById('answerQ').textContent    = q;
+      document.getElementById('answerText').textContent = data.answer;
+
+      const note = document.getElementById('verificationNote');
+      if (data.explanation && data.explanation !== 'Verification unavailable.') {
+        note.textContent   = 'Verification: ' + data.explanation;
+        note.style.display = 'block';
+      } else {
+        note.style.display = 'none';
+      }
+
+      document.getElementById('result').style.display = 'block';
+
+    } catch (e) {
+      const eb = document.getElementById('errorBlock');
+      eb.textContent   = `Cannot reach the API${API ? ' at ' + API : ''}. Check your VERCEL_URL setting or make sure FastAPI is running.`;
+      eb.style.display = 'block';
+    } finally {
+      clearInterval(loaderInterval);
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('submitBtn').disabled   = false;
     }
-
-    document.getElementById('result').style.display = 'block';
-
-  } catch (e) {
-    const eb = document.getElementById('errorBlock');
-    eb.textContent = 'Cannot reach the server. Make sure FastAPI is running on port 8000.';
-    eb.style.display = 'block';
-  } finally {
-    clearInterval(loaderInterval);
-    document.getElementById('loader').style.display  = 'none';
-    document.getElementById('submitBtn').disabled    = false;
   }
-}
 
-function resetUI() {
-  document.getElementById('result').style.display     = 'none';
-  document.getElementById('errorBlock').style.display = 'none';
-  document.getElementById('questionInput').value      = '';
-  document.getElementById('questionInput').focus();
-}
+  function resetUI() {
+    document.getElementById('result').style.display     = 'none';
+    document.getElementById('errorBlock').style.display = 'none';
+    document.getElementById('questionInput').value      = '';
+    document.getElementById('questionInput').focus();
+  }
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('questionInput').addEventListener('keydown', e => {
-    if (e.key === 'Enter' && e.ctrlKey) askQuestion();
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('questionInput').addEventListener('keydown', e => {
+      if (e.key === 'Enter' && e.ctrlKey) askQuestion();
+    });
   });
-});
 </script>
 </body>
 </html>

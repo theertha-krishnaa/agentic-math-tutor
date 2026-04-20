@@ -1,70 +1,64 @@
 import re
 
+# ── Math keywords — if none of these appear, block the question ──────────────
 MATH_KEYWORDS = {
-    "solve", "calculate", "compute", "evaluate", "simplify", "expand",
-    "factor", "differentiate", "integrate", "derive", "prove", "verify",
-    "integral", "derivative", "limit", "gradient", "divergence",
-    "equation", "inequality", "formula", "theorem", "expression",
-    "polynomial", "quadratic", "linear", "cubic", "logarithm", "log",
-    "matrix", "vector", "determinant", "eigenvalue", "transpose",
-    "probability", "permutation", "combination", "binomial", "variance",
-    "algebra", "calculus", "geometry", "trigonometry", "statistics",
-    "arithmetic", "sequence", "series", "function", "graph",
-    "sin", "cos", "tan", "sine", "cosine", "tangent",
-    "hypotenuse", "triangle", "circle", "parabola", "ellipse",
-    "area", "volume", "perimeter", "circumference", "radius", "diameter",
-    "mean", "median", "mode", "deviation", "distribution",
-    "prime", "factorial", "fibonacci", "exponent", "root", "square root",
+    "solve", "calculate", "find", "prove", "integral", "derivative",
+    "equation", "matrix", "probability", "geometry", "algebra",
+    "calculus", "statistics", "formula", "theorem", "function",
+    "graph", "polynomial", "factor", "simplify", "expand", "evaluate",
+    "compute", "limit", "sum", "product", "vector", "angle", "triangle",
+    "circle", "area", "volume", "number", "digit", "prime", "root",
+    "square", "cube", "power", "exponent", "logarithm", "log", "sin",
+    "cos", "tan", "differentiate", "integrate", "series", "sequence",
+    "arithmetic", "geometric", "mean", "median", "mode", "variance",
+    "standard deviation", "permutation", "combination", "binomial",
     "fraction", "decimal", "percentage", "ratio", "proportion",
-    "slope", "intercept", "coordinate", "axis", "angle",
-    "maximum", "minimum", "optimize", "converge", "diverge",
-    "addition", "subtraction", "multiplication", "division",
-    "plus", "minus", "multiply", "divided by", "squared", "cubed",
-    "inverse", "orthogonal", "perpendicular", "parallel",
-    "digit", "integer", "rational", "irrational", "complex number",
-    "real number", "natural number", "infinity",
+    "linear", "quadratic", "cubic", "inequality", "coordinate",
+    "slope", "intercept", "parabola", "hyperbola", "ellipse",
+    "determinant", "eigenvalue", "eigenvector", "transpose", "inverse",
+    "gradient", "divergence", "curl", "laplacian", "fourier",
+    "what is", "how to", "explain", "define", "show", "verify",
+    "distance", "speed", "rate", "time", "work", "profit", "loss",
+    "interest", "tax", "discount", "average", "maximum", "minimum",
+    "plus", "minus", "multiply", "divide", "times", "divided",
+    "greater", "less", "equal", "x", "y", "z", "n", "k",
 }
 
+# ── Blocklist — offensive or off-topic trigger words ─────────────────────────
 BLOCKLIST = {
     "porn", "sex", "nude", "naked", "kill", "murder", "suicide",
     "drugs", "hack", "weapon", "bomb", "terrorist", "racist",
     "password", "credit card", "ssn", "social security",
 }
 
-NON_MATH_PATTERNS = [
-    r"^what is (the )?(capital|president|population|currency|language|flag)",
-    r"^who (is|was|are|were)",
-    r"^when (did|was|is|are)",
-    r"^where (is|are|was|were)",
-    r"^why (is|are|was|were|did|do)",
-    r"^(tell me|write|compose|create|give me|list|name|describe)",
-    r"^(what|who|where|when|why|how) (is|are|was|were) (the )?(best|worst|most|famous|popular|capital|president|king|queen)",
-]
-
 
 def validate_input(question: str) -> dict:
+    """
+    Check if a question is a valid math question.
+
+    Returns:
+        {"allowed": True, "reason": "OK"}
+        {"allowed": False, "reason": "explanation"}
+    """
     if not question or not question.strip():
         return {"allowed": False, "reason": "Question cannot be empty."}
 
     q = question.lower().strip()
 
+    # Too short
     if len(q) < 5:
         return {"allowed": False, "reason": "Question is too short."}
 
+    # Too long (prevent prompt injection)
     if len(q) > 1000:
         return {"allowed": False, "reason": "Question is too long. Please keep it under 1000 characters."}
 
+    # Blocklist check
     for word in BLOCKLIST:
         if word in q:
             return {"allowed": False, "reason": "This content is not allowed."}
 
-    for pattern in NON_MATH_PATTERNS:
-        if re.match(pattern, q):
-            return {
-                "allowed": False,
-                "reason": "Only math questions are supported. Please ask about algebra, calculus, geometry, statistics, or similar topics."
-            }
-
+    # Math keyword check
     has_math = any(kw in q for kw in MATH_KEYWORDS)
     if not has_math:
         return {
@@ -76,25 +70,33 @@ def validate_input(question: str) -> dict:
 
 
 def sanitize_output(response: str) -> str:
+    """
+    Clean and sanitize the LLM response before sending to user.
+    """
     if not response:
         return "I was unable to generate an answer. Please try again."
 
+    # Remove HTML tags
     text = re.sub(r'<[^>]+>', '', response)
 
+    # Remove lines with non-math personal/cultural opinions
     bad_phrases = [
         "in my opinion", "i believe", "religiously", "culturally",
         "in my culture", "you should", "i think you", "personally",
         "in my experience", "as a human", "as an ai, i feel",
     ]
     lines = text.split('\n')
-    cleaned_lines = [
-        line for line in lines
-        if not any(phrase in line.lower() for phrase in bad_phrases)
-    ]
+    cleaned_lines = []
+    for line in lines:
+        line_lower = line.lower()
+        if not any(phrase in line_lower for phrase in bad_phrases):
+            cleaned_lines.append(line)
     text = '\n'.join(cleaned_lines)
 
+    # Cap at 2000 characters, ending on a complete sentence
     if len(text) > 2000:
         text = text[:2000]
+        # Find last complete sentence
         last_end = max(text.rfind('.'), text.rfind('?'), text.rfind('!'))
         if last_end > 100:
             text = text[:last_end + 1]

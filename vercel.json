@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api/index.py"
+    }
+  ],
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 60
+    }
+  },
+  "env": {
+    "GROQ_API_KEY":          "@groq_api_key",
+    "QDRANT_URL":            "@qdrant_url",
+    "QDRANT_API_KEY":        "@qdrant_api_key",
+    "GROQ_MODEL":            "llama3-70b-8192",
+    "COLLECTION_NAME":       "math_knowledge",
+    "CONFIDENCE_THRESHOLD":  "0.75"
+  }
+}

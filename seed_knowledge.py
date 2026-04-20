@@ -100,6 +100,5 @@ def main():
     total = rag.count()
     print(f"\nDone. Qdrant now has {total} documents.")
 
-
 if __name__ == "__main__":
     main()

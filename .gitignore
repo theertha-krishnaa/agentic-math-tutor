@@ -1,13 +1,23 @@
+# Environment secrets — NEVER commit this
 .env
+
+# Python cache
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
+.pytest_cache/
+
+# Virtual environments
 venv/
 env/
 .venv/
-qdrant_storage/
-qdrant_storage_v2/
-credentials/
-*.json
+
+# Vercel
+.vercel/
+
+# OS
 .DS_Store
 Thumbs.db
+
+# Sentence-transformers model cache (re-downloaded on deploy)
+.cache/
